@@ -14,6 +14,9 @@ import SellerDetailPage from './pages/SellerDetailPage'
 import ProductDetailPage from './pages/ProductDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
 import PlaceholderPage from './pages/PlaceholderPage'
+import ProfilePage from './pages/customer/ProfilePage'
+import AddressesPage from './pages/customer/AddressesPage'
+import FavoritesPage from './pages/customer/FavoritesPage'
 
 function App() {
   return (
@@ -45,10 +48,10 @@ function App() {
             <Route element={<CustomerLayout />}>
               <Route path="/customer/orders" element={<PlaceholderPage title="Meus pedidos" description="Lista de pedidos — em construção" />} />
               <Route path="/customer/cart" element={<PlaceholderPage title="Meu carrinho" description="Carrinho — em construção" />} />
-              <Route path="/customer/addresses" element={<PlaceholderPage title="Endereços" description="Endereços — em construção" />} />
-              <Route path="/customer/favorites" element={<PlaceholderPage title="Favoritos" description="Favoritos — em construção" />} />
+              <Route path="/customer/addresses" element={<AddressesPage />} />
+              <Route path="/customer/favorites" element={<FavoritesPage />} />
               <Route path="/customer/tickets" element={<PlaceholderPage title="Suporte" description="Tickets — em construção" />} />
-              <Route path="/customer/profile" element={<PlaceholderPage title="Meu perfil" description="Perfil — em construção" />} />
+              <Route path="/customer/profile" element={<ProfilePage />} />
             </Route>
           </Route>
 

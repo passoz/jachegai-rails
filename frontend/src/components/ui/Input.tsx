@@ -3,10 +3,12 @@ import type { InputHTMLAttributes } from 'react'
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
   error?: string
+  hint?: string
 }
 
-export default function Input({ label, error, className = '', id, ...rest }: InputProps) {
-  const inputId = id ?? rest.name
+export default function Input({ label, error, hint, className = '', id, ...rest }: InputProps) {
+  const generatedId = label ? label.toLowerCase().replace(/[^a-z0-9]/g, '-') : undefined
+  const inputId = id ?? rest.name ?? generatedId
 
   return (
     <div className="w-full">
@@ -27,6 +29,7 @@ export default function Input({ label, error, className = '', id, ...rest }: Inp
         ].join(' ')}
         {...rest}
       />
+      {hint && !error && <p className="mt-1 text-sm font-bold text-black/50">{hint}</p>}
       {error && <p className="mt-1 text-sm font-bold text-brutal-red">{error}</p>}
     </div>
   )

@@ -1301,15 +1301,15 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `GET|PATCH /api/v1/customer/profile`, `GET|POST /api/v1/customer/addresses`, `GET|PATCH|DELETE /api/v1/customer/addresses/{id}`, `POST /api/v1/customer/addresses/{id}/default`, `GET|POST /api/v1/customer/favorites`, `DELETE /api/v1/customer/favorites/{id}`.
 
-- [ ] `customer/ProfilePage.tsx`:
+- [x] `customer/ProfilePage.tsx`:
   - Card com dados do perfil: nome completo, email (readonly), data de criação.
   - Formulário de edição inline (nome completo). Botão "Salvar" (`PATCH /api/v1/customer/profile`).
-- [ ] `customer/AddressesPage.tsx`:
+- [x] `customer/AddressesPage.tsx`:
   - Lista de endereços em cards brutalistas. Badge "Padrão" no endereço default.
   - Cada card: rua, número, complemento, bairro, cidade, estado, CEP. Botões: "Editar" (abre Modal), "Excluir" (ConfirmDialog), "Tornar padrão" (`POST .../default`).
   - Botão "Novo endereço" → abre Modal com formulário (campos: street, number, complement, neighborhood, city, state, zip_code). `POST /api/v1/customer/addresses`.
   - Validação 422: destaca campos errados.
-- [ ] `customer/FavoritesPage.tsx`:
+- [x] `customer/FavoritesPage.tsx`:
   - Grid de sellers favoritados (`GET /api/v1/customer/favorites`).
   - Cada card: nome do seller, botão "Remover" (`DELETE /api/v1/customer/favorites/{id}`).
   - Botão "Explorar sellers" → `/sellers` se lista vazia (EmptyState).
