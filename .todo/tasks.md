@@ -1480,16 +1480,16 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `GET /api/v1/admin/dashboard`, `GET /api/v1/admin/users`, `GET /api/v1/admin/users/{id}`, `POST .../disable`, `.../enable`.
 
-- [ ] `admin/DashboardPage.tsx`:
+- [x] `admin/DashboardPage.tsx`:
   - Grid de cards de métricas (consumir `GET /api/v1/admin/dashboard`):
     - Total de usuários, sellers ativos, couriers ativos, pedidos hoje, tickets abertos, pagamentos pendentes.
   - Cada métrica: número grande em `font-black text-5xl`, label em `text-sm uppercase`, ícone.
   - Cards com `border-4 border-black rounded-3xl shadow-brutal`.
-- [ ] `admin/UsersPage.tsx`:
+- [x] `admin/UsersPage.tsx`:
   - Tabela brutalista: nome, email, roles (Badges), status (ativo/disabled), data de criação.
   - Click na row → `/admin/users/:id`.
   - Paginação.
-- [ ] `admin/UserDetailPage.tsx`:
+- [x] `admin/UserDetailPage.tsx`:
   - Card com detalhes do user: nome, email, roles, status, criação.
   - Botão "Desabilitar" (ConfirmDialog → `POST .../disable`) ou "Habilitar" (`POST .../enable`) conforme status.
 

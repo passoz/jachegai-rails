@@ -37,6 +37,9 @@ import CourierAvailabilityPage from './pages/courier/AvailabilityPage'
 import CourierDeliveriesPage from './pages/courier/DeliveriesPage'
 import CourierHistoryPage from './pages/courier/HistoryPage'
 import CourierStatsPage from './pages/courier/StatsPage'
+import AdminDashboardPage from './pages/admin/DashboardPage'
+import AdminUsersPage from './pages/admin/UsersPage'
+import AdminUserDetailPage from './pages/admin/UserDetailPage'
 
 function App() {
   return (
@@ -108,8 +111,9 @@ function App() {
           {/* Admin */}
           <Route element={<ProtectedRoute roles={['admin']} />}>
             <Route element={<AdminLayout />}>
-              <Route path="/admin/dashboard" element={<PlaceholderPage title="Dashboard" description="Métricas — em construção" />} />
-              <Route path="/admin/users" element={<PlaceholderPage title="Usuários" description="Gestão de usuários — em construção" />} />
+              <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
+              <Route path="/admin/users" element={<AdminUsersPage />} />
+              <Route path="/admin/users/:id" element={<AdminUserDetailPage />} />
               <Route path="/admin/sellers" element={<PlaceholderPage title="Sellers" description="Moderação — em construção" />} />
               <Route path="/admin/couriers" element={<PlaceholderPage title="Couriers" description="Moderação — em construção" />} />
               <Route path="/admin/orders" element={<PlaceholderPage title="Pedidos" description="Oversight — em construção" />} />
