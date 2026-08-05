@@ -1372,18 +1372,18 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `POST /api/v1/seller/onboarding`, `GET|PATCH /api/v1/seller/profile`, `GET|PATCH /api/v1/seller/settings`.
 
-- [ ] `seller/OnboardingPage.tsx`:
+- [x] `seller/OnboardingPage.tsx`:
   - Formulário de onboarding: business_name, document (CNPJ/CPF), description, phone.
   - Botão "Enviar para aprovação" → `POST /api/v1/seller/onboarding`.
   - Sucesso 201: Card de confirmação "Sua loja foi enviada para análise" + Badge `pending_review`.
   - Erro 422: destaca campos. Se already onboarded: mensagem "Você já tem um cadastro de seller".
   - Se já tem seller: redirecionar para `/seller/products`.
-- [ ] `seller/ProfilePage.tsx`:
+- [x] `seller/ProfilePage.tsx`:
   - Card com dados do seller: business_name, document, description, phone, moderation_state (Badge).
   - Formulário de edição: business_name, description, phone (document readonly).
   - Botão "Salvar" → `PATCH /api/v1/seller/profile`.
   - Se `moderation_state != approved`: banner "Sua loja está em análise / suspensa / rejeitada" com Badge.
-- [ ] `seller/SettingsPage.tsx`:
+- [x] `seller/SettingsPage.tsx`:
   - Card com settings do seller (`GET /api/v1/seller/settings`).
   - Formulário de edição dos settings editáveis. `PATCH /api/v1/seller/settings`.
 
