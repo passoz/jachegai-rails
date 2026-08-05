@@ -44,6 +44,12 @@ import AdminSellersPage from './pages/admin/SellersPage'
 import AdminSellerDetailPage from './pages/admin/SellerDetailPage'
 import AdminCouriersPage from './pages/admin/CouriersPage'
 import AdminCourierDetailPage from './pages/admin/CourierDetailPage'
+import AdminOrdersPage from './pages/admin/OrdersPage'
+import AdminOrderDetailPage from './pages/admin/OrderDetailPage'
+import AdminPaymentsPage from './pages/admin/PaymentsPage'
+import AdminPaymentDetailPage from './pages/admin/PaymentDetailPage'
+import AdminTicketsPage from './pages/admin/TicketsPage'
+import AdminTicketDetailPage from './pages/admin/TicketDetailPage'
 
 function App() {
   return (
@@ -122,9 +128,12 @@ function App() {
               <Route path="/admin/sellers/:id" element={<AdminSellerDetailPage />} />
               <Route path="/admin/couriers" element={<AdminCouriersPage />} />
               <Route path="/admin/couriers/:id" element={<AdminCourierDetailPage />} />
-              <Route path="/admin/orders" element={<PlaceholderPage title="Pedidos" description="Oversight — em construção" />} />
-              <Route path="/admin/payments" element={<PlaceholderPage title="Pagamentos" description="Pagamentos — em construção" />} />
-              <Route path="/admin/tickets" element={<PlaceholderPage title="Tickets" description="Suporte — em construção" />} />
+              <Route path="/admin/orders" element={<AdminOrdersPage />} />
+              <Route path="/admin/orders/:id" element={<AdminOrderDetailPage />} />
+              <Route path="/admin/payments" element={<AdminPaymentsPage />} />
+              <Route path="/admin/payments/:id" element={<AdminPaymentDetailPage />} />
+              <Route path="/admin/tickets" element={<AdminTicketsPage />} />
+              <Route path="/admin/tickets/:id" element={<AdminTicketDetailPage />} />
               <Route path="/admin/invoices" element={<PlaceholderPage title="Faturas" description="Faturas — em construção" />} />
               <Route path="/admin/settings" element={<PlaceholderPage title="Configurações" description="Configurações — em construção" />} />
               <Route path="/admin/observability" element={<PlaceholderPage title="Observabilidade" description="Métricas do sistema — em construção" />} />

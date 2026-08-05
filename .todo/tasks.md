@@ -1521,20 +1521,20 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `GET /api/v1/admin/orders`, `GET /api/v1/admin/orders/{id}`, `POST .../cancel`, `GET /api/v1/admin/payments`, `GET /api/v1/admin/payments/{id}`, `POST .../confirm`, `GET /api/v1/admin/tickets`, `GET /api/v1/admin/tickets/{id}`, `POST .../messages`, `.../start_progress`, `.../resolve`, `.../reopen`, `.../close`.
 
-- [ ] `admin/OrdersPage.tsx`:
+- [x] `admin/OrdersPage.tsx`:
   - Tabela: ID, customer, seller, status (Badge), total (formatMoney), data. Click → detalhe.
   - Filtros por status.
-- [ ] `admin/OrderDetailPage.tsx`:
+- [x] `admin/OrderDetailPage.tsx`:
   - Mesmo layout que customer order detail, mas com botão "Cancelar pedido" → `POST .../cancel` (ConfirmDialog).
   - Visualização: itens, totais, status, histórico, courier (se atribuído).
-- [ ] `admin/PaymentsPage.tsx`:
+- [x] `admin/PaymentsPage.tsx`:
   - Tabela: ID, order_id, amount (formatMoney), status (Badge), data.
-- [ ] `admin/PaymentDetailPage.tsx`:
+- [x] `admin/PaymentDetailPage.tsx`:
   - Detalhes do pagamento. Se status `pending`: botão "Confirmar pagamento" → `POST .../confirm`.
-- [ ] `admin/TicketsPage.tsx`:
+- [x] `admin/TicketsPage.tsx`:
   - Tabela: subject, customer, status (Badge), data. Click → detalhe.
   - Filtros por status.
-- [ ] `admin/TicketDetailPage.tsx`:
+- [x] `admin/TicketDetailPage.tsx`:
   - Histórico de mensagens (chat-like, como customer).
   - Botões de transição conforme estado:
     - `open` → "Iniciar atendimento" (start_progress) + "Resolver" (resolve).
