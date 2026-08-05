@@ -26,6 +26,9 @@ import TicketDetailPage from './pages/customer/TicketDetailPage'
 import SellerOnboardingPage from './pages/seller/OnboardingPage'
 import SellerProfilePage from './pages/seller/ProfilePage'
 import SellerSettingsPage from './pages/seller/SettingsPage'
+import SellerCategoriesPage from './pages/seller/CategoriesPage'
+import SellerProductsPage from './pages/seller/ProductsPage'
+import SellerInventoryPage from './pages/seller/InventoryPage'
 
 function App() {
   return (
@@ -72,10 +75,10 @@ function App() {
           <Route element={<ProtectedRoute roles={['seller']} />}>
             <Route element={<SellerLayout />}>
               <Route path="/seller/onboarding" element={<SellerOnboardingPage />} />
-              <Route path="/seller/products" element={<PlaceholderPage title="Produtos" description="Gestão de produtos — em construção" />} />
+              <Route path="/seller/products" element={<SellerProductsPage />} />
               <Route path="/seller/orders" element={<PlaceholderPage title="Pedidos" description="Pedidos recebidos — em construção" />} />
-              <Route path="/seller/inventory" element={<PlaceholderPage title="Estoque" description="Gestão de estoque — em construção" />} />
-              <Route path="/seller/categories" element={<PlaceholderPage title="Categorias" description="Categorias — em construção" />} />
+              <Route path="/seller/inventory" element={<SellerInventoryPage />} />
+              <Route path="/seller/categories" element={<SellerCategoriesPage />} />
               <Route path="/seller/settings" element={<SellerSettingsPage />} />
               <Route path="/seller/profile" element={<SellerProfilePage />} />
             </Route>

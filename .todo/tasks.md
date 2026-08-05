@@ -1393,12 +1393,12 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `GET|POST /api/v1/seller/categories`, `GET|PATCH|DELETE /api/v1/seller/categories/{id}`, `PUT /api/v1/seller/categories/order`, `GET|POST /api/v1/seller/products`, `GET|PATCH|DELETE /api/v1/seller/products/{id}`, `POST .../activate`, `POST .../deactivate`.
 
-- [ ] `seller/CategoriesPage.tsx`:
+- [x] `seller/CategoriesPage.tsx`:
   - Lista de categorias com drag-and-drop para reordenar (ou botões ↑↓). Ao reordenar: `PUT /api/v1/seller/categories/order` com `{ids: [...]}`.
   - Cada card: nome, posição, botões "Editar" (Modal) e "Excluir" (ConfirmDialog → DELETE).
   - Botão "Nova categoria" → Modal com campo nome. `POST /api/v1/seller/categories`.
   - Erro ao excluir (422 referential): mensagem "Categoria possui produtos vinculados".
-- [ ] `seller/ProductsPage.tsx`:
+- [x] `seller/ProductsPage.tsx`:
   - Tabela brutalista de produtos: nome, preço (formatMoney), categoria, status (Badge: active/inactive), ações.
   - Ações: "Editar" → `/seller/products/:id`, "Ativar/Desativar" → `POST .../activate` ou `.../deactivate` (toggle), "Excluir" (ConfirmDialog → DELETE).
   - Botão "Novo produto" → `/seller/products/new` ou Modal com formulário.
@@ -1406,7 +1406,7 @@ Todos os componentes em `frontend/src/components/ui/`.
     - Campos: name, description, price_cents (input monetário: digita `12,50` → envia `1250`), category_id (dropdown), image_url (texto).
     - `POST /api/v1/seller/products` (novo) ou `PATCH` (editar).
   - EmptyState se nenhum produto.
-- [ ] `seller/InventoryPage.tsx`:
+- [x] `seller/InventoryPage.tsx`:
   - Tabela: produto, estoque atual, input para ajustar quantidade.
   - Botão "Atualizar" por linha → `PATCH /api/v1/seller/inventory/{product_id}` com `{quantity}`.
   - Validação: quantidade >= 0, inteiro.
