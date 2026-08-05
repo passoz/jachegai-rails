@@ -1566,19 +1566,19 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 ## T14.19 — Estados visuais, i18n e polish final
 
-- [ ] **Empty states** em todas as listagens: EmptyState brutalista com ícone + mensagem + ação.
-- [ ] **Loading states**: LoadingSpinner em todas as páginas que fazem fetch.
-- [ ] **Error states**: ErrorState com botão "Tentar novamente" em todos os fetches que falharem.
-- [ ] **Toast notifications**: componente `Toast.tsx` para feedback de ações (sucesso verde, erro vermelho). Posição: bottom-right, auto-dismiss 4s.
-- [ ] **Responsividade**: todas as páginas funcionais em mobile (≥375px). Grid → coluna única. Tabela → cards stacked. Sidebar admin → menu hamburger.
-- [ ] **i18n base**: criar `frontend/src/i18n/pt-BR.ts` com todas as strings da UI. Componentes usam constantes do i18n, nunca strings hardcoded (UX-008). Idioma base: português brasileiro.
-- [ ] **Formatação monetária**: `formatMoney(1250, "BRL")` → `R$ 12,50`. Nunca exibir centavos brutos.
-- [ ] **Status labels**: vocabulário consistente (UX-005). Mapear todos os status do backend para labels PT-BR:
+- [x] **Empty states** em todas as listagens: EmptyState brutalista com ícone + mensagem + ação.
+- [x] **Loading states**: LoadingSpinner em todas as páginas que fazem fetch.
+- [x] **Error states**: ErrorState com botão "Tentar novamente" em todos os fetches que falharem.
+- [x] **Toast notifications**: componente `Toast.tsx` para feedback de ações (sucesso verde, erro vermelho). Posição: bottom-right, auto-dismiss 4s.
+- [x] **Responsividade**: todas as páginas funcionais em mobile (≥375px). Grid → coluna única. Tabela → cards stacked. Sidebar admin → menu hamburger.
+- [x] **i18n base**: criar `frontend/src/i18n/pt-BR.ts` com todas as strings da UI. Componentes usam constantes do i18n, nunca strings hardcoded (UX-008). Idioma base: português brasileiro.
+- [x] **Formatação monetária**: `formatMoney(1250, "BRL")` → `R$ 12,50`. Nunca exibir centavos brutos.
+- [x] **Status labels**: vocabulário consistente (UX-005). Mapear todos os status do backend para labels PT-BR:
   - `pending` → "Pendente", `accepted` → "Aceito", `rejected` → "Rejeitado", `preparing` → "Em preparo", `ready` → "Pronto", `assigned` → "Em entrega", `picked_up` → "Coletado", `delivered` → "Entregue", `cancelled` → "Cancelado".
   - `pending_review` → "Aguardando análise", `approved` → "Aprovado", `suspended` → "Suspenso".
   - `open` → "Aberto", `in_progress` → "Em atendimento", `resolved` → "Resolvido", `closed` → "Fechado".
   - `paid` → "Pago", `failed` → "Falhou", `refunded` → "Estornado".
-- [ ] **Confirmação em ações destrutivas** (UX-004): ConfirmDialog em todas as ações de cancelar, excluir, rejeitar, suspender.
-- [ ] **Preservar input após falha** (UX-003): formulários não limpam campos após erro 422.
-- [ ] **Verificar**: `npm run build` passa sem erros (TypeScript strict).
-- [ ] **Verificar**: navegação entre todos os fluxos funcional com backend rodando.
+- [x] **Confirmação em ações destrutivas** (UX-004): ConfirmDialog em todas as ações de cancelar, excluir, rejeitar, suspender.
+- [x] **Preservar input após falha** (UX-003): formulários não limpam campos após erro 422.
+- [x] **Verificar**: `npm run build` passa sem erros (TypeScript strict).
+- [x] **Verificar**: navegação entre todos os fluxos funcional com backend rodando.
