@@ -1136,13 +1136,13 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 ## T14.3 — Layout, Header, Footer, navegação e rotas
 
-- [ ] `Footer.tsx` — em `frontend/src/components/layout/`:
+- [x] `Footer.tsx` — em `frontend/src/components/layout/`:
   - Fundo preto, texto branco.
   - 4 colunas: **JaChegai** (logo + tagline), **Para você** (links: Descubra sellers, Seja courier, Seja parceiro), **Suporte** (FAQ, Termos, Privacidade, Contato), **Siga-nos** (ícones placeholder).
   - Copyright `© 2026 JaChegai. Todos os direitos reservados.` centralizado embaixo.
   - Border-top: `border-t-4 border-brutal-red`.
   - Presente em **todas** as páginas sem exceção.
-- [ ] `Header.tsx` — componente condicional por role:
+- [x] `Header.tsx` — componente condicional por role:
   - **Visitante**: logo + links "Entrar" / "Cadastrar".
   - **Customer**: logo + "Meu carrinho" + "Meus pedidos" + "Perfil" + "Sair".
   - **Seller**: logo + "Produtos" + "Pedidos" + "Estoque" + "Perfil" + "Sair".
@@ -1150,13 +1150,13 @@ Todos os componentes em `frontend/src/components/ui/`.
   - **Admin**: logo + "Dashboard" + "Usuários" + "Sellers" + "Couriers" + "Pedidos" + "Pagamentos" + "Tickets" + "Faturas" + "Config" + "Sair".
   - Fundo branco, `border-b-4 border-black`, logo em `font-black italic text-2xl`.
   - Mobile: menu hamburger que abre sidebar com mesmos links.
-- [ ] `PublicLayout.tsx` — Header visitante + `<Outlet />` + Footer.
-- [ ] `CustomerLayout.tsx` — Header customer + `<Outlet />` + Footer. Redireciona para `/login` se não autenticado.
-- [ ] `SellerLayout.tsx` — Header seller + `<Outlet />` + Footer. Redireciona para `/login` se não autenticado ou sem role seller.
-- [ ] `CourierLayout.tsx` — Header courier + `<Outlet />` + Footer. Idem.
-- [ ] `AdminLayout.tsx` — Header admin + sidebar fixa (links de navegação) + `<Outlet />` + Footer. Sidebar com `bg-black text-white` e links com hover `bg-brutal-red`.
-- [ ] `ProtectedRoute.tsx` — wrapper que checa AuthContext: se não autenticado → `/login`; se autenticado mas sem a role necessária → página 403 brutalista.
-- [ ] Configurar React Router em `App.tsx` com:
+- [x] `PublicLayout.tsx` — Header visitante + `<Outlet />` + Footer.
+- [x] `CustomerLayout.tsx` — Header customer + `<Outlet />` + Footer. Redireciona para `/login` se não autenticado.
+- [x] `SellerLayout.tsx` — Header seller + `<Outlet />` + Footer. Redireciona para `/login` se não autenticado ou sem role seller.
+- [x] `CourierLayout.tsx` — Header courier + `<Outlet />` + Footer. Idem.
+- [x] `AdminLayout.tsx` — Header admin + sidebar fixa (links de navegação) + `<Outlet />` + Footer. Sidebar com `bg-black text-white` e links com hover `bg-brutal-red`.
+- [x] `ProtectedRoute.tsx` — wrapper que checa AuthContext: se não autenticado → `/login`; se autenticado mas sem a role necessária → página 403 brutalista.
+- [x] Configurar React Router em `App.tsx` com:
   ```
   /                           → PublicLayout > HomePage
   /sellers                    → PublicLayout > SellersPage
@@ -1217,25 +1217,25 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 ## T14.4 — Serviço de API e AuthContext
 
-- [ ] `frontend/src/services/api.ts`:
+- [x] `frontend/src/services/api.ts`:
   - Instância Axios com `baseURL: ""` (proxy resolve).
   - Request interceptor: se `localStorage.getItem("token")` existe, adiciona `Authorization: Bearer <token>`.
   - Response interceptor: se status `401`, limpa `localStorage` (`token`, `user`), redireciona para `/login` com query `?expired=true`.
   - Helper `unwrap(response)`: extrai `response.data.data` do envelope `{ok, data, meta}`.
   - Helper `unwrapError(error)`: extrai `error.response.data` para código/mensagem de erro.
-- [ ] `frontend/src/services/auth.ts` — funções tipadas:
+- [x] `frontend/src/services/auth.ts` — funções tipadas:
   - `register(name, email, password)` → `POST /api/v1/auth/register` → retorna `{token, user}`.
   - `login(email, password)` → `POST /api/v1/auth/login` → retorna `{token, user}`.
   - `logout()` → `POST /api/v1/auth/logout` → limpa localStorage.
   - `getMe()` → `GET /api/v1/auth/me` → retorna user com roles.
-- [ ] `frontend/src/contexts/AuthContext.tsx`:
+- [x] `frontend/src/contexts/AuthContext.tsx`:
   - State: `user` (com `id`, `email`, `name`, `roles[]`), `token`, `loading`, `isAuthenticated`.
   - `login(email, password)`: chama auth.login, salva token + user no localStorage, seta state.
   - `register(name, email, password)`: chama auth.register, salva, seta state.
   - `logout()`: chama auth.logout, limpa localStorage, seta state null.
   - `hasRole(role: string): boolean` — verifica se o user tem a role (customer, seller, courier, admin).
   - No mount: se token existe no localStorage, chama `getMe()` para validar; se 401, limpa.
-- [ ] Tipos TypeScript em `frontend/src/types/`:
+- [x] Tipos TypeScript em `frontend/src/types/`:
   - `api.ts`: `ApiResponse<T>`, `ApiError`, `PaginationMeta`.
   - `auth.ts`: `User`, `LoginRequest`, `RegisterRequest`, `AuthState`.
   - `models.ts`: `Seller`, `Product`, `Category`, `Cart`, `CartItem`, `Order`, `OrderItem`, `Address`, `Favorite`, `Ticket`, `TicketMessage`, `Courier`, `Invoice`, `Payment`, `MarketplaceSetting`.
