@@ -54,7 +54,7 @@ bin/brakeman --no-pager
 
 ## T00.1 — Registrar baseline do Rails atual
 
-- [ ] Executar e registrar o resultado inicial de:
+- [x] Executar e registrar o resultado inicial de:
   ```bash
   bin/rails test
   bin/rubocop
@@ -63,63 +63,63 @@ bin/brakeman --no-pager
   bin/importmap audit
   bin/rails runner 'puts Rails.application.class.module_parent.name'
   ```
-- [ ] Confirmar `JachegaiRails` como namespace da aplicação.
-- [ ] Confirmar Ruby `4.0.6`, Rails `8.1.3`, SQLite e minitest.
-- [ ] Registrar falhas preexistentes sem mascará-las.
-- [ ] Confirmar que não existe remote Git; se um remote for adicionado depois, sincronizar issues abertas em `.todo/issues.md` antes de continuar.
+- [x] Confirmar `JachegaiRails` como namespace da aplicação.
+- [x] Confirmar Ruby `4.0.6`, Rails `8.1.3`, SQLite e minitest.
+- [x] Registrar falhas preexistentes sem mascará-las.
+- [x] Confirmar que não existe remote Git; se um remote for adicionado depois, sincronizar issues abertas em `.todo/issues.md` antes de continuar.
 
 ## T00.2 — Criar arquitetura Rails documentada
 
 **Arquivo:** `docs/BACKEND_ARCHITECTURE_RAILS.md`
 
-- [ ] Preencher toda a decision worksheet da seção 25 da spec.
-- [ ] Registrar modular monolith Rails + SQLite + Active Record + Solid Queue.
-- [ ] Registrar diagramas textuais de componentes e deployable units.
-- [ ] Registrar data ownership e consistency boundaries:
+- [x] Preencher toda a decision worksheet da seção 25 da spec.
+- [x] Registrar modular monolith Rails + SQLite + Active Record + Solid Queue.
+- [x] Registrar diagramas textuais de componentes e deployable units.
+- [x] Registrar data ownership e consistency boundaries:
   - checkout/inventory;
   - order transition/history/outbox;
   - courier assignment;
   - payment transition/idempotency;
   - moderation/audit;
   - ticket/initial message.
-- [ ] Registrar identity/session/authorization flow.
-- [ ] Registrar background recovery, backup/restore e failure model.
-- [ ] Registrar alternativas rejeitadas: plano Go, serviços separados, broker externo, Redis, provider real no MVP.
-- [ ] Registrar limitações de SQLite e estratégia para concorrência.
-- [ ] Registrar integração futura de identity/payment/storage por adapters.
+- [x] Registrar identity/session/authorization flow.
+- [x] Registrar background recovery, backup/restore e failure model.
+- [x] Registrar alternativas rejeitadas: plano Go, serviços separados, broker externo, Redis, provider real no MVP.
+- [x] Registrar limitações de SQLite e estratégia para concorrência.
+- [x] Registrar integração futura de identity/payment/storage por adapters.
 
 ## T00.3 — Criar matriz com os 197 requirement IDs
 
 **Arquivo:** `docs/BACKEND_REQUIREMENTS_MATRIX.md`
 
-- [ ] Extrair todos os IDs de `docs/PORTABLE_PRODUCT_SPEC.md`.
-- [ ] Criar exatamente uma linha por ID com colunas:
+- [x] Extrair todos os IDs de `docs/PORTABLE_PRODUCT_SPEC.md`.
+- [x] Criar exatamente uma linha por ID com colunas:
   `Requirement | Summary | Slice | Rails component | Test/evidence | Status | Deviation`.
-- [ ] Usar apenas: `planned`, `implemented`, `verified`, `deferred_frontend`, `conditional_not_applicable`, `blocked`.
-- [ ] Classificar requisitos visuais/frontend honestamente como `deferred_frontend`.
-- [ ] Classificar callback de payment provider como `conditional_not_applicable` enquanto só houver gateway simulado.
-- [ ] Não marcar qualquer requisito como `verified` nesta fase.
-- [ ] Criar validação automatizada que compare IDs da spec com a matriz e falhe por ausente, duplicado ou ID desconhecido.
-- [ ] **RED:** executar o teste/script antes de a matriz estar completa e observar falha.
-- [ ] **GREEN:** completar a matriz até 197/197.
-- [ ] **REFACTOR:** ordenar por prefixo/número e remover duplicações.
+- [x] Usar apenas: `planned`, `implemented`, `verified`, `deferred_frontend`, `conditional_not_applicable`, `blocked`.
+- [x] Classificar requisitos visuais/frontend honestamente como `deferred_frontend`.
+- [x] Classificar callback de payment provider como `conditional_not_applicable` enquanto só houver gateway simulado.
+- [x] Não marcar qualquer requisito como `verified` nesta fase.
+- [x] Criar validação automatizada que compare IDs da spec com a matriz e falhe por ausente, duplicado ou ID desconhecido.
+- [x] **RED:** executar o teste/script antes de a matriz estar completa e observar falha.
+- [x] **GREEN:** completar a matriz até 197/197.
+- [x] **REFACTOR:** ordenar por prefixo/número e remover duplicações.
 
 ## T00.4 — Criar esqueleto OpenAPI
 
 **Arquivo:** `docs/api/openapi.yaml`
 
-- [ ] Definir OpenAPI 3.1, servers locais, schemas de envelopes e taxonomia de erros.
-- [ ] Definir security scheme baseado em session cookie + CSRF header.
-- [ ] Inserir inicialmente `/healthz`, `/readyz` e namespaces de `/api/v1`.
-- [ ] Adicionar teste que parseia o YAML e valida versão/schema básico.
-- [ ] Manter paths/schemas atualizados em cada fatia.
+- [x] Definir OpenAPI 3.1, servers locais, schemas de envelopes e taxonomia de erros.
+- [x] Definir security scheme baseado em session cookie + CSRF header.
+- [x] Inserir inicialmente `/healthz`, `/readyz` e namespaces de `/api/v1`.
+- [x] Adicionar teste que parseia o YAML e valida versão/schema básico.
+- [x] Manter paths/schemas atualizados em cada fatia.
 
 ## Gate Fase 00
 
-- [ ] Arquitetura revisada contra a spec.
-- [ ] Matriz contém exatamente 197 IDs.
-- [ ] OpenAPI é parseável.
-- [ ] Baseline registrado.
+- [x] Arquitetura revisada contra a spec.
+- [x] Matriz contém exatamente 197 IDs.
+- [x] OpenAPI é parseável.
+- [x] Baseline registrado.
 
 ---
 
@@ -151,23 +151,23 @@ bin/brakeman --no-pager
 
 ## T01.3 — SQLite operational baseline
 
-- [ ] **RED:** teste de `PRAGMA foreign_keys = ON`.
-- [ ] **RED:** teste de `journal_mode = WAL` e busy timeout.
-- [ ] **GREEN:** configurar connection hook/initializer compatível com Rails.
-- [ ] Testar readiness query simples e falha controlada.
-- [ ] Documentar efeito de test DBs paralelos e conexões.
+- [x] **RED:** teste de `PRAGMA foreign_keys = ON`.
+- [x] **RED:** teste de `journal_mode = WAL` e busy timeout.
+- [x] **GREEN:** configurar connection hook/initializer compatível com Rails.
+- [x] Testar readiness query simples e falha controlada.
+- [x] Documentar efeito de test DBs paralelos e conexões.
 
 ## T01.4 — JSON envelope e domain error taxonomy
 
 **Arquivos esperados:** `app/controllers/api/v1/base_controller.rb`, `app/lib/domain_error.rb`, `app/controllers/concerns/` se necessário.
 
-- [ ] **RED:** teste de envelope success com `ok`, `data`, `meta`.
-- [ ] **RED:** testes de cada error code/status mapping.
-- [ ] **RED:** internal error não expõe exception, SQL ou stack trace.
-- [ ] **GREEN:** responder com helpers e error mapping centralizados.
-- [ ] Não usar `204`; toda resposta de sucesso usa envelope.
-- [ ] Mensagens client-visible via I18n; field details com códigos estáveis.
-- [ ] **REFACTOR:** controllers não duplicam render/error logic.
+- [x] **RED:** teste de envelope success com `ok`, `data`, `meta`.
+- [x] **RED:** testes de cada error code/status mapping.
+- [x] **RED:** internal error não expõe exception, SQL ou stack trace.
+- [x] **GREEN:** responder com helpers e error mapping centralizados.
+- [x] Não usar `204`; toda resposta de sucesso usa envelope.
+- [x] Mensagens client-visible via I18n; field details com códigos estáveis.
+- [x] **REFACTOR:** controllers não duplicam render/error logic.
 
 ## T01.5 — Strict JSON input
 
@@ -463,7 +463,7 @@ Rotas GET/POST/PATCH/DELETE definidas no prompt.
 - [x] **RED:** create/list/update/select-default/delete próprio.
 - [x] **RED:** outro customer recebe forbidden/not found sem disclosure.
 - [x] **RED:** default remains deterministic ao excluir.
-- [ ] **DIFERIDO F06:** address usado em order não destrói histórico; validar snapshots quando `orders` existir.
+- [x] **DIFERIDO F06:** address usado em order não destrói histórico; validar snapshots quando `orders` existir.
 - [x] **GREEN:** address service/API.
 
 ## T05.3 — Favorites
@@ -920,11 +920,11 @@ Rotas GET/POST/PATCH/DELETE definidas no prompt.
 
 **Arquivo:** `docs/OPERATIONS.md`
 
-- [ ] Documentar boot/config/migration/deploy/forward-fix/rollback.
-- [ ] Documentar secret rotation e incident response.
-- [ ] Documentar graceful SIGTERM de Puma + Solid Queue.
-- [ ] Documentar SQLite/upload backup, schedule, retention e monitoring.
-- [ ] Registrar targets provisórios RPO 24h/RTO 4h.
+- [x] Documentar boot/config/migration/deploy/forward-fix/rollback.
+- [x] Documentar secret rotation e incident response.
+- [x] Documentar graceful SIGTERM de Puma + Solid Queue.
+- [x] Documentar SQLite/upload backup, schedule, retention e monitoring.
+- [x] Registrar targets provisórios RPO 24h/RTO 4h.
 
 ## T13.3 — Backup/restore
 
