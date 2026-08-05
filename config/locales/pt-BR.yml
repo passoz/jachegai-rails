@@ -1,0 +1,74 @@
+pt-BR:
+  hello: "Olá"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "A validação falhou: %{errors}"
+        invalid: "é inválido"
+        blank: "não pode ficar em branco"
+        taken: "já está em uso"
+        too_short: "é curto demais (mínimo de %{count} caracteres)"
+        too_long: "é longo demais (máximo de %{count} caracteres)"
+  errors:
+    messages:
+      invalid: "é inválido"
+      blank: "não pode ficar em branco"
+      too_short: "é curto demais (mínimo de %{count} caracteres)"
+      too_long: "é longo demais (máximo de %{count} caracteres)"
+      taken: "já está em uso"
+      not_found: "não encontrado"
+      unauthorized: "não autorizado"
+      forbidden: "proibido"
+      invalid_input: "entrada inválida"
+      insufficient_inventory: "estoque insuficiente"
+      idempotency_conflict: "conflito de idempotência"
+      expired: "expirado"
+      already_exists: "já existe"
+      invalid_transition: "transição inválida para o estado atual"
+      category_in_use: "a categoria está em uso e não pode ser removida"
+      product_in_use: "o produto possui histórico e não pode ser removido"
+      internal_error: "Ocorreu um erro interno inesperado"
+      rate_limited: "muitas tentativas, tente novamente mais tarde"
+      payload_too_large: "o corpo da requisição é grande demais"
+      invalid_content_type: "o tipo de conteúdo da requisição é inválido"
+      service_unavailable: "serviço indisponível"
+      external_dependency_unavailable: "dependência externa temporariamente indisponível"
+      internal_failure: "falha interna inesperada"
+      less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+      greater_than_or_equal_to: "deve ser maior ou igual a %{count}"
+      not_an_integer: "deve ser um número inteiro"
+  api:
+    envelope:
+      ok: "ok"
+      error: "erro"
+  auth:
+    login: "Entrar"
+    logout: "Sair"
+    register: "Registrar"
+    me: "Meus dados"
+  seller:
+    onboarding: "Cadastro de vendedor"
+    profile: "Perfil do vendedor"
+    settings: "Configurações do vendedor"
+  customer:
+    profile: "Meu perfil"
+    addresses: "Meus endereços"
+    favorites: "Meus favoritos"
+    cart: "Meu carrinho"
+  courier:
+    onboarding: "Cadastro de entregador"
+    profile: "Perfil do entregador"
+  order:
+    checkout: "Finalizar pedido"
+    tracking: "Rastrear pedido"
+  support:
+    ticket: "Chamado"
+    tickets: "Chamados"
+  admin:
+    dashboard: "Painel administrativo"
+    users: "Usuários"
+    sellers: "Vendedores"
+    couriers: "Entregadores"
+    orders: "Pedidos"
+    payments: "Pagamentos"
+    settings: "Configurações"
