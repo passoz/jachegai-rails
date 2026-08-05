@@ -8,6 +8,10 @@ import AdminLayout from './components/layout/AdminLayout'
 import ProtectedRoute from './components/layout/ProtectedRoute'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
+import HomePage from './pages/HomePage'
+import SellersPage from './pages/SellersPage'
+import SellerDetailPage from './pages/SellerDetailPage'
+import ProductDetailPage from './pages/ProductDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
 import PlaceholderPage from './pages/PlaceholderPage'
 
@@ -18,10 +22,21 @@ function App() {
         <Routes>
           {/* Public */}
           <Route element={<PublicLayout />}>
-            <Route path="/" element={<PlaceholderPage title="JaChegai" description="Página inicial — em construção" />} />
-            <Route path="/sellers" element={<PlaceholderPage title="Sellers" description="Lista de sellers — em construção" />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/sellers" element={<SellersPage />} />
+            <Route path="/sellers/:id" element={<SellerDetailPage />} />
+            <Route path="/products/:id" element={<ProductDetailPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/about" element={<PlaceholderPage title="Sobre o JaChegai" description="Sobre nós — em construção" />} />
+            <Route path="/faq" element={<PlaceholderPage title="FAQ" description="Perguntas frequentes — em construção" />} />
+            <Route path="/terms" element={<PlaceholderPage title="Termos de Uso" description="Termos — em construção" />} />
+            <Route path="/privacy" element={<PlaceholderPage title="Privacidade" description="Política de privacidade — em construção" />} />
+            <Route path="/cookies" element={<PlaceholderPage title="Cookies" description="Política de cookies — em construção" />} />
+            <Route path="/lgpd" element={<PlaceholderPage title="LGPD" description="LGPD — em construção" />} />
+            <Route path="/contact" element={<PlaceholderPage title="Contato" description="Contato — em construção" />} />
+            <Route path="/become-seller" element={<PlaceholderPage title="Seja um seller" description="Parceiro — em construção" />} />
+            <Route path="/become-courier" element={<PlaceholderPage title="Seja um courier" description="Parceiro — em construção" />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
 

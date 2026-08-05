@@ -1244,7 +1244,7 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 ## T14.5 — Autenticação: Login, Registro, Logout
 
-- [ ] `LoginPage.tsx`:
+- [x] `LoginPage.tsx`:
   - Centralizada vertical/horizontal.
   - Card brutalista com título `"Entrar"` em `font-black italic text-3xl`.
   - Campos: email (type email), senha (type password). Ambos com Input brutalista.
@@ -1252,14 +1252,14 @@ Todos os componentes em `frontend/src/components/ui/`.
   - Se `?expired=true` na URL: toast/banner vermelho "Sua sessão expirou. Faça login novamente."
   - Erro 401: mensagem "Email ou senha incorretos" sob o formulário (UX-003: preserva email digitado).
   - Após login: redireciona para dashboard do primeiro role do user (`customer` → `/customer/orders`, `seller` → `/seller/orders`, `courier` → `/courier/deliveries`, `admin` → `/admin/dashboard`).
-- [ ] `RegisterPage.tsx`:
+- [x] `RegisterPage.tsx`:
   - Card brutalista com título `"Criar conta"`.
   - Campos: nome completo, email, senha, confirmar senha.
   - Validação client-side: email format, senha mínimo 6 chars, senhas iguais.
   - Erro 422: destaca campos com `border-brutal-red` e mostra mensagem do backend por campo.
   - Após registro: login automático e redirecionamento para `/customer/orders`.
   - Link "Já tem conta? Entrar" → `/login`.
-- [ ] Botão de logout no Header: chama `AuthContext.logout()` → redireciona para `/`.
+- [x] Botão de logout no Header: chama `AuthContext.logout()` → redireciona para `/`.
 
 ---
 
@@ -1267,33 +1267,33 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints consumidos:** `GET /api/v1/public/sellers`, `GET /api/v1/public/sellers/{id}`, `GET /api/v1/public/sellers/{seller_id}/products`, `GET /api/v1/public/products/{id}`, `POST|PATCH|DELETE /api/v1/public/cart/items`, `GET|DELETE /api/v1/public/cart`.
 
-- [ ] `HomePage.tsx`:
+- [x] `HomePage.tsx`:
   - Hero section: título grande em `font-black italic` ("Seu delivery. Já chegou."), subtítulo, botão CTA "Explorar sellers" → `/sellers`.
   - Seção "Como funciona" — 3 cards brutalistas: Escolha → Peça → Receba.
   - Seção "Sellers em destaque" — grid de cards de sellers (consumir `GET /api/v1/public/sellers?limit=6`).
   - Seção "Seja parceiro" / "Seja entregador" — CTAs para páginas estáticas futuras.
-- [ ] `SellersPage.tsx`:
+- [x] `SellersPage.tsx`:
   - Título `"Sellers"` em PageTitle brutalista.
   - Grid de SellerCards (nome, descrição, badge de status). Cada card clicável → `/sellers/:id`.
   - Paginação se houver `meta.page`/`meta.total_pages`. EmptyState se nenhum seller.
-- [ ] `SellerDetailPage.tsx`:
+- [x] `SellerDetailPage.tsx`:
   - Header do seller: nome em `font-black italic`, descrição, badge moderation_state.
   - Lista de produtos desse seller (`GET /api/v1/public/sellers/{seller_id}/products`).
   - Cada produto: Card com nome, preço (formatado BRL: `R$ XX,XX`), badge disponibilidade.
   - Botão "Adicionar ao carrinho" em cada produto → chama `POST /api/v1/public/cart/items` com `{product_id, quantity: 1}`.
   - Se resposta 201: toast de sucesso. Se seller diferente do cart atual: exibir ConfirmDialog "Seu carrinho será substituído. Continuar?" (guest-cart replace policy).
-- [ ] `ProductDetailPage.tsx`:
+- [x] `ProductDetailPage.tsx`:
   - Detalhes do produto: nome, descrição, preço formatado, estoque (quantidade disponível ou "Esgotado").
   - Botão "Adicionar ao carrinho" se em estoque.
   - Seletor de quantidade (`1..10` ou max estoque) com Input numérico.
-- [ ] `GuestCartWidget.tsx` (componente no Header público):
+- [x] `GuestCartWidget.tsx` (componente no Header público):
   - Ícone de carrinho com badge de quantidade de itens.
   - Click abre painel lateral (slide-over) com lista de itens do guest cart (`GET /api/v1/public/cart`).
   - Cada item: nome, qty, preço unitário, botão remover (`DELETE /api/v1/public/cart/items/{id}`).
   - Botão "Editar quantidade" → `PATCH /api/v1/public/cart/items/{id}` com `{quantity}`.
   - Botão "Fazer login para finalizar" → `/login` (após login, handoff do guest cart acontece via `POST /api/v1/customer/cart/handoff`).
   - EmptyState se carrinho vazio.
-- [ ] Formatação monetária: criar helper `formatMoney(cents: number, currency: string): string` → `R$ 12,50` para BRL.
+- [x] Formatação monetária: criar helper `formatMoney(cents: number, currency: string): string` → `R$ 12,50` para BRL.
 
 ---
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/useAuth'
+import GuestCartWidget from '../public/GuestCartWidget'
 
 interface NavLink {
   label: string
@@ -93,6 +94,7 @@ export default function Header() {
           </nav>
         ) : (
           <nav className="hidden md:flex items-center gap-2" aria-label="Navegação visitante">
+            <GuestCartWidget />
             <Link
               to="/login"
               className="px-4 py-2 text-sm font-bold border-2 border-brutal-black rounded-xl hover:bg-brutal-gray transition-colors"
