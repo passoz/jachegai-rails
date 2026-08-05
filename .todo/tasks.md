@@ -1439,14 +1439,14 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `POST /api/v1/courier/onboarding`, `GET|PATCH /api/v1/courier/profile`, `PATCH /api/v1/courier/availability`.
 
-- [ ] `courier/OnboardingPage.tsx`:
+- [x] `courier/OnboardingPage.tsx`:
   - Formulário: full_name, document (CPF), vehicle_type (select: moto, bicicleta, carro), phone.
   - Botão "Cadastrar como entregador" → `POST /api/v1/courier/onboarding`.
   - Sucesso: "Cadastro enviado para análise" + Badge `pending_review`.
-- [ ] `courier/ProfilePage.tsx`:
+- [x] `courier/ProfilePage.tsx`:
   - Card: nome, documento, veículo, phone, approval_state (Badge), operational_state (Badge).
   - Formulário de edição: nome, phone, vehicle_type. `PATCH /api/v1/courier/profile`.
-- [ ] `courier/AvailabilityPage.tsx`:
+- [x] `courier/AvailabilityPage.tsx`:
   - Card grande com estado operacional atual: `offline` (cinza), `available` (verde), `on_delivery` (azul).
   - Toggle brutalista (botão grande): "Ficar disponível" / "Ficar offline" → `PATCH /api/v1/courier/availability` com `{available: true/false}`.
   - Se on_delivery: toggle desabilitado com mensagem "Finalize sua entrega atual antes de alterar disponibilidade".

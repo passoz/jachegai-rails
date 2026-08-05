@@ -31,6 +31,9 @@ import SellerProductsPage from './pages/seller/ProductsPage'
 import SellerInventoryPage from './pages/seller/InventoryPage'
 import SellerOrdersPage from './pages/seller/OrdersPage'
 import SellerOrderDetailPage from './pages/seller/OrderDetailPage'
+import CourierOnboardingPage from './pages/courier/OnboardingPage'
+import CourierProfilePage from './pages/courier/ProfilePage'
+import CourierAvailabilityPage from './pages/courier/AvailabilityPage'
 
 function App() {
   return (
@@ -90,11 +93,12 @@ function App() {
           {/* Courier */}
           <Route element={<ProtectedRoute roles={['courier']} />}>
             <Route element={<CourierLayout />}>
+              <Route path="/courier/onboarding" element={<CourierOnboardingPage />} />
               <Route path="/courier/deliveries" element={<PlaceholderPage title="Entregas" description="Entregas disponíveis — em construção" />} />
               <Route path="/courier/history" element={<PlaceholderPage title="Histórico" description="Histórico de entregas — em construção" />} />
-              <Route path="/courier/availability" element={<PlaceholderPage title="Disponibilidade" description="Disponibilidade — em construção" />} />
+              <Route path="/courier/availability" element={<CourierAvailabilityPage />} />
               <Route path="/courier/stats" element={<PlaceholderPage title="Estatísticas" description="Estatísticas — em construção" />} />
-              <Route path="/courier/profile" element={<PlaceholderPage title="Meu perfil" description="Perfil — em construção" />} />
+              <Route path="/courier/profile" element={<CourierProfilePage />} />
             </Route>
           </Route>
 
