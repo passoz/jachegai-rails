@@ -14,8 +14,9 @@
 - Este arquivo é o espelho canônico local de issues abertas e deve ser re-
   populado via GitHub API sempre que o remote ganhar issues.
 
-## Última verificação
+## Última verificação (remote criado)
 
-- Remote: `passoz/jachegai-rails`
-- Issues abertas no momento: 0
-- Última sync: 2026-06-10 (criação do remote)
+- Remote: `passoz/jachegai-rails` → `git@github.com:passoz/jachegai-rails.git`
+- Branch `main` em tracking com `origin/main`; primeiro push concluído (commit `5d192c9`).
+- Issues abertas no momento: **0** (consulta via `gh issue list --state open`).
+- Última sync: 2026-06-10, após criação do remote — nada a sincronizar.
