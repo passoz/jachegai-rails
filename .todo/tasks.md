@@ -1417,11 +1417,11 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `GET /api/v1/seller/orders`, `GET /api/v1/seller/orders/{id}`, `POST .../accept`, `.../reject`, `.../preparing`, `.../ready`.
 
-- [ ] `seller/OrdersPage.tsx`:
+- [x] `seller/OrdersPage.tsx`:
   - Filtros por status: tabs "Pendentes", "Aceitos", "Em preparação", "Prontos", "Todos".
   - Tabela: ID (truncado), customer info, itens (resumo), total, status (Badge), data. Click → detalhe.
   - Badge vermelha pulsante em "Pendentes" se houver pedidos pendentes.
-- [ ] `seller/OrderDetailPage.tsx`:
+- [x] `seller/OrderDetailPage.tsx`:
   - Card com detalhes: status (Badge grande), data, customer.
   - Lista de itens com quantidades e preços.
   - Totais discriminados.

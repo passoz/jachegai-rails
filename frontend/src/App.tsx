@@ -29,6 +29,8 @@ import SellerSettingsPage from './pages/seller/SettingsPage'
 import SellerCategoriesPage from './pages/seller/CategoriesPage'
 import SellerProductsPage from './pages/seller/ProductsPage'
 import SellerInventoryPage from './pages/seller/InventoryPage'
+import SellerOrdersPage from './pages/seller/OrdersPage'
+import SellerOrderDetailPage from './pages/seller/OrderDetailPage'
 
 function App() {
   return (
@@ -76,7 +78,8 @@ function App() {
             <Route element={<SellerLayout />}>
               <Route path="/seller/onboarding" element={<SellerOnboardingPage />} />
               <Route path="/seller/products" element={<SellerProductsPage />} />
-              <Route path="/seller/orders" element={<PlaceholderPage title="Pedidos" description="Pedidos recebidos — em construção" />} />
+              <Route path="/seller/orders" element={<SellerOrdersPage />} />
+              <Route path="/seller/orders/:id" element={<SellerOrderDetailPage />} />
               <Route path="/seller/inventory" element={<SellerInventoryPage />} />
               <Route path="/seller/categories" element={<SellerCategoriesPage />} />
               <Route path="/seller/settings" element={<SellerSettingsPage />} />
