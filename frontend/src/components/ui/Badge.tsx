@@ -1,34 +1,33 @@
 const badgeVariants: Record<string, string> = {
-  // Order states
-  pending: 'bg-yellow-100 text-black',
-  accepted: 'bg-green-100 text-black',
-  rejected: 'bg-brutal-red text-black',
-  preparing: 'bg-blue-100 text-black',
-  ready: 'bg-teal-100 text-black',
-  assigned: 'bg-indigo-100 text-black',
-  picked_up: 'bg-purple-100 text-black',
-  delivered: 'bg-green-100 text-black',
-  cancelled: 'bg-brutal-red text-black',
-  // Moderation states
-  pending_review: 'bg-yellow-100 text-black',
-  approved: 'bg-green-100 text-black',
-  suspended: 'bg-orange-100 text-black',
-  // Payment states
-  paid: 'bg-green-100 text-black',
-  failed: 'bg-brutal-red text-black',
-  refunded: 'bg-gray-200 text-black',
-  // Courier operational
-  available: 'bg-green-100 text-black',
-  offline: 'bg-gray-200 text-black',
-  on_delivery: 'bg-blue-100 text-black',
-  // Ticket states
-  open: 'bg-yellow-100 text-black',
-  in_progress: 'bg-blue-100 text-black',
-  resolved: 'bg-green-100 text-black',
-  closed: 'bg-gray-200 text-black',
-  // Product
-  active: 'bg-green-100 text-black',
-  inactive: 'bg-gray-200 text-black',
+  // Positive / Active / Success states -> White with black text & black border
+  accepted: 'bg-white text-brutal-black',
+  ready: 'bg-white text-brutal-black',
+  delivered: 'bg-white text-brutal-black',
+  approved: 'bg-white text-brutal-black',
+  paid: 'bg-white text-brutal-black',
+  available: 'bg-white text-brutal-black',
+  resolved: 'bg-white text-brutal-black',
+  active: 'bg-white text-brutal-black',
+
+  // Negative / Danger / Warning states -> Brutal Red with black text
+  rejected: 'bg-brutal-red text-brutal-black',
+  cancelled: 'bg-brutal-red text-brutal-black',
+  suspended: 'bg-brutal-red text-brutal-black',
+  failed: 'bg-brutal-red text-brutal-black',
+
+  // Pending / Neutral states -> Brutal Gray with black text
+  pending: 'bg-brutal-gray text-brutal-black',
+  preparing: 'bg-brutal-gray text-brutal-black',
+  assigned: 'bg-brutal-gray text-brutal-black',
+  picked_up: 'bg-brutal-gray text-brutal-black',
+  pending_review: 'bg-brutal-gray text-brutal-black',
+  refunded: 'bg-brutal-gray text-brutal-black',
+  offline: 'bg-brutal-gray text-brutal-black',
+  on_delivery: 'bg-brutal-gray text-brutal-black',
+  open: 'bg-brutal-gray text-brutal-black',
+  in_progress: 'bg-brutal-gray text-brutal-black',
+  closed: 'bg-brutal-gray text-brutal-black',
+  inactive: 'bg-brutal-gray text-brutal-black',
 }
 
 const defaultLabels: Record<string, string> = {
@@ -64,7 +63,7 @@ interface BadgeProps {
 }
 
 export default function Badge({ status, label }: BadgeProps) {
-  const variant = badgeVariants[status] ?? 'bg-gray-200 text-black'
+  const variant = badgeVariants[status] ?? 'bg-brutal-gray text-brutal-black'
   const text = label ?? defaultLabels[status] ?? status
 
   return (

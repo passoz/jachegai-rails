@@ -1320,7 +1320,7 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `GET|DELETE /api/v1/customer/cart`, `POST /api/v1/customer/cart/items`, `PATCH|DELETE /api/v1/customer/cart/items/{id}`, `POST /api/v1/customer/cart/handoff`, `POST /api/v1/customer/checkout`.
 
-- [ ] `customer/CartPage.tsx`:
+- [x] `customer/CartPage.tsx`:
   - Handoff automático: ao montar, se guest cart existia (cookie/localStorage), chamar `POST /api/v1/customer/cart/handoff` silenciosamente. Exibir toast se houver merge.
   - Lista de itens do carrinho (`GET /api/v1/customer/cart`).
   - Cada item: nome produto, quantidade (editável via input numérico → `PATCH .../items/{id}`), preço unitário, subtotal. Botão "Remover" → `DELETE`.
@@ -1328,7 +1328,7 @@ Todos os componentes em `frontend/src/components/ui/`.
   - Botão "Limpar carrinho" (ConfirmDialog → `DELETE /api/v1/customer/cart`).
   - Botão "Finalizar compra" → navega para `/customer/checkout`.
   - EmptyState se carrinho vazio: "Seu carrinho está vazio" + botão "Explorar sellers".
-- [ ] `customer/CheckoutPage.tsx`:
+- [x] `customer/CheckoutPage.tsx`:
   - Resumo do carrinho (readonly): itens, quantidades, preços, total.
   - Seletor de endereço de entrega: dropdown com endereços do customer (`GET /api/v1/customer/addresses`). Endereço padrão pré-selecionado. Link "Adicionar endereço" → abre Modal.
   - Botão "Confirmar pedido" → `POST /api/v1/customer/checkout` com `{address_id}`.
