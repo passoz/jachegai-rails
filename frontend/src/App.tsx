@@ -50,6 +50,10 @@ import AdminPaymentsPage from './pages/admin/PaymentsPage'
 import AdminPaymentDetailPage from './pages/admin/PaymentDetailPage'
 import AdminTicketsPage from './pages/admin/TicketsPage'
 import AdminTicketDetailPage from './pages/admin/TicketDetailPage'
+import AdminInvoicesPage from './pages/admin/InvoicesPage'
+import AdminInvoiceDetailPage from './pages/admin/InvoiceDetailPage'
+import AdminSettingsPage from './pages/admin/SettingsPage'
+import AdminObservabilityPage from './pages/admin/ObservabilityPage'
 
 function App() {
   return (
@@ -134,9 +138,10 @@ function App() {
               <Route path="/admin/payments/:id" element={<AdminPaymentDetailPage />} />
               <Route path="/admin/tickets" element={<AdminTicketsPage />} />
               <Route path="/admin/tickets/:id" element={<AdminTicketDetailPage />} />
-              <Route path="/admin/invoices" element={<PlaceholderPage title="Faturas" description="Faturas — em construção" />} />
-              <Route path="/admin/settings" element={<PlaceholderPage title="Configurações" description="Configurações — em construção" />} />
-              <Route path="/admin/observability" element={<PlaceholderPage title="Observabilidade" description="Métricas do sistema — em construção" />} />
+              <Route path="/admin/invoices" element={<AdminInvoicesPage />} />
+              <Route path="/admin/invoices/:id" element={<AdminInvoiceDetailPage />} />
+              <Route path="/admin/settings" element={<AdminSettingsPage />} />
+              <Route path="/admin/observability" element={<AdminObservabilityPage />} />
             </Route>
           </Route>
         </Routes>

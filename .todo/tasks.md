@@ -1548,15 +1548,15 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `GET /api/v1/admin/invoices`, `POST /api/v1/admin/invoices/generate`, `GET /api/v1/admin/invoices/{id}`, `GET|POST /api/v1/admin/settings`, `GET /api/v1/admin/observability/summary|requests|orders|jobs`.
 
-- [ ] `admin/InvoicesPage.tsx`:
+- [x] `admin/InvoicesPage.tsx`:
   - Tabela de faturas: seller, período, total, data de geração. Click → detalhe.
   - Botão "Gerar fatura" → Modal com campos: seller_id (dropdown), period_start, period_end (date inputs). `POST /api/v1/admin/invoices/generate`.
-- [ ] `admin/InvoiceDetailPage.tsx`:
+- [x] `admin/InvoiceDetailPage.tsx`:
   - Card com detalhes: seller, período, breakdown (subtotal, fees), total.
-- [ ] `admin/SettingsPage.tsx`:
+- [x] `admin/SettingsPage.tsx`:
   - Lista de settings atuais (`GET /api/v1/admin/settings`). Cada setting: key, value, effective_from.
   - Formulário para adicionar novo setting: key (select entre opções conhecidas), value, effective_from (date). `POST /api/v1/admin/settings`.
-- [ ] `admin/ObservabilityPage.tsx`:
+- [x] `admin/ObservabilityPage.tsx`:
   - Cards com métricas do sistema (`GET .../summary`): total de requests recentes, orders pendentes, jobs no outbox.
   - Tabela de requests recentes (`.../requests`): path, method, status, duration.
   - Tabela de orders recentes (`.../orders`): ID, status, data.
