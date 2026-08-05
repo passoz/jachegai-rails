@@ -1458,7 +1458,7 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `GET /api/v1/courier/orders/eligible`, `GET /api/v1/courier/orders/active`, `GET /api/v1/courier/orders/history`, `POST .../accept`, `.../pickup`, `.../deliver`, `GET /api/v1/courier/stats`.
 
-- [ ] `courier/DeliveriesPage.tsx`:
+- [x] `courier/DeliveriesPage.tsx`:
   - Duas seções:
     1. **Entrega ativa** (se houver): Card grande com detalhes do pedido ativo (`GET .../active`). Botões de transição:
        - `assigned` → "Confirmar coleta" (pickup).
@@ -1468,9 +1468,9 @@ Todos os componentes em `frontend/src/components/ui/`.
        - Sucesso: recarrega página, entrega aparece em "Entrega ativa".
        - Erro 409/422 (já aceita por outro): mensagem "Esta entrega já foi aceita por outro entregador".
   - EmptyState se sem entregas disponíveis: "Nenhuma entrega disponível no momento".
-- [ ] `courier/HistoryPage.tsx`:
+- [x] `courier/HistoryPage.tsx`:
   - Lista paginada de entregas concluídas (`GET .../history`). Cada card: data, seller, status terminal, valor courier_fee.
-- [ ] `courier/StatsPage.tsx`:
+- [x] `courier/StatsPage.tsx`:
   - Card de estatísticas (`GET /api/v1/courier/stats`): total de entregas, ganhos totais (formatMoney por currency), média por entrega.
   - Exibir breakdown por currency se múltiplas moedas existirem.
 
