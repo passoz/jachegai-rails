@@ -1095,20 +1095,21 @@ bash script/smoke_backend.sh
 
 ## T14.1 — Scaffold Vite + Tailwind + proxy
 
-- [ ] `npm create vite@latest frontend -- --template react-ts` na raiz do projeto.
-- [ ] `cd frontend && npm install react-router-dom axios`.
-- [ ] `npm install -D tailwindcss @tailwindcss/vite` (Tailwind 4 plugin Vite).
-- [ ] Configurar `vite.config.ts`:
+- [x] `npm create vite@latest frontend -- --template react-ts` na raiz do projeto.
+- [x] `cd frontend && npm install react-router-dom axios`.
+- [x] `npm install -D tailwindcss @tailwindcss/vite` (Tailwind 4 plugin Vite).
+- [x] Configurar `vite.config.ts`:
   - Plugin `@tailwindcss/vite`.
   - `server.proxy`: `"/api/v1"` → `http://localhost:3000`, `/healthz` → idem, `/readyz` → idem.
   - `server.port`: 5173.
-- [ ] Criar `frontend/src/index.css` com `@import "tailwindcss"` + `@theme` contendo:
+- [x] Criar `frontend/src/index.css` com `@import "tailwindcss"` + `@theme` contendo:
   - `--color-brutal-red: #FF6B6B`, `--color-brutal-black: #000000`, `--color-brutal-white: #FFFFFF`, `--color-brutal-gray: #F5F5F5`.
   - `--radius-brutal: 1.5rem`, `--shadow-brutal: 8px 8px 0px 0px rgba(0,0,0,1)`.
-- [ ] Limpar arquivos gerados pelo scaffold (App.css, assets/react.svg, conteúdo padrão do App.tsx).
-- [ ] Verificar: `npm run dev` compila sem erros e a página raiz renderiza com fundo branco.
-- [ ] Verificar: `curl http://localhost:5173/api/v1/auth/me` retorna `401` (proxy funciona para o Rails).
-- [ ] Adicionar `frontend/node_modules/` e `frontend/dist/` ao `.gitignore` (já existem).
+- [x] Limpar arquivos gerados pelo scaffold (App.css, assets/react.svg, conteúdo padrão do App.tsx).
+- [x] Verificar: `npm run build` compila sem erros.
+- [x] Verificar: `curl http://localhost:5173/api/v1/auth/me` retorna `401` (proxy funciona para o Rails).
+- [x] Verificar: `curl http://localhost:5173/healthz` retorna `200`.
+- [x] Adicionar `frontend/node_modules/` e `frontend/dist/` ao `.gitignore`.
 
 ---
 
@@ -1116,18 +1117,20 @@ bash script/smoke_backend.sh
 
 Todos os componentes em `frontend/src/components/ui/`.
 
-- [ ] `Button.tsx` — variantes: `primary` (bg-black text-white), `danger` (bg-brutal-red text-black), `outline` (bg-white border-black). Props: `variant`, `size`, `loading`, `disabled`, `children`, `onClick`, `type`. Todos com `border-4 border-black rounded-3xl shadow-brutal`. Estado hover: desloca sombra para `4px 4px`. Estado disabled: `opacity-50 cursor-not-allowed`.
-- [ ] `Input.tsx` — Props: `label`, `name`, `type`, `error`, `placeholder`, `value`, `onChange`, `required`. Label em `font-bold text-sm uppercase tracking-wider`. Input com `border-4 border-black rounded-3xl`. Erro: `border-brutal-red` + mensagem vermelha abaixo.
-- [ ] `Select.tsx` — Mesmo padrão visual do Input. Props: `label`, `options`, `value`, `onChange`, `error`.
-- [ ] `Card.tsx` — Container com `border-4 border-black rounded-3xl shadow-brutal bg-white p-6`. Props: `children`, `className`.
-- [ ] `Modal.tsx` — Overlay `bg-black/50`, conteúdo centralizado com Card brutalista. Props: `open`, `onClose`, `title`, `children`. Título em `font-black italic text-2xl`. Botão X no canto superior.
-- [ ] `Badge.tsx` — Para status labels. Variantes por status: `pending` (amarelo), `approved/paid` (verde), `rejected/cancelled` (vermelho), `active` (azul). Todos com `border-2 border-black rounded-full px-3 py-1 text-xs font-bold uppercase`.
-- [ ] `Table.tsx` — Tabela com `border-4 border-black rounded-3xl overflow-hidden`. Headers em `bg-black text-white font-bold uppercase`. Linhas alternadas `bg-white / bg-brutal-gray`. Props: `columns`, `data`, `onRowClick`.
-- [ ] `EmptyState.tsx` — Ícone grande + título italic bold + descrição + botão de ação opcional. Para listas vazias.
-- [ ] `LoadingSpinner.tsx` — Spinner brutalista (quadrado rotacionando com `border-4 border-black`).
-- [ ] `ErrorState.tsx` — Card vermelho com ícone + mensagem + botão "Tentar novamente".
-- [ ] `PageTitle.tsx` — `<h1 className="text-4xl font-black italic text-black">`. Subtítulo opcional em `text-lg text-gray-600`.
-- [ ] `ConfirmDialog.tsx` — Modal com mensagem + botões "Confirmar" (danger) e "Cancelar" (outline). Para ações destrutivas (UX-004).
+- [x] `Button.tsx` — variantes: `primary` (bg-black text-white), `danger` (bg-brutal-red text-black), `outline` (bg-white border-black). Props: `variant`, `size`, `loading`, `disabled`, `children`, `onClick`, `type`. Todos com `border-4 border-black rounded-3xl shadow-brutal`. Estado hover: desloca sombra para `4px 4px`. Estado disabled: `opacity-50 cursor-not-allowed`.
+- [x] `Input.tsx` — Props: `label`, `name`, `type`, `error`, `placeholder`, `value`, `onChange`, `required`. Label em `font-bold text-sm uppercase tracking-wider`. Input com `border-4 border-black rounded-3xl`. Erro: `border-brutal-red` + mensagem vermelha abaixo.
+- [x] `Select.tsx` — Mesmo padrão visual do Input. Props: `label`, `options`, `value`, `onChange`, `error`.
+- [x] `Card.tsx` — Container com `border-4 border-black rounded-3xl shadow-brutal bg-white p-6`. Props: `children`, `className`.
+- [x] `Modal.tsx` — Overlay `bg-black/50`, conteúdo centralizado com Card brutalista. Props: `open`, `onClose`, `title`, `children`. Título em `font-black italic text-2xl`. Botão X no canto superior.
+- [x] `Badge.tsx` — Para status labels. Variantes por status: `pending` (amarelo), `approved/paid` (verde), `rejected/cancelled` (vermelho), `active` (azul). Todos com `border-2 border-black rounded-full px-3 py-1 text-xs font-bold uppercase`.
+- [x] `Table.tsx` — Tabela com `border-4 border-black rounded-3xl overflow-hidden`. Headers em `bg-black text-white font-bold uppercase`. Linhas alternadas `bg-white / bg-brutal-gray`. Props: `columns`, `data`, `onRowClick`.
+- [x] `EmptyState.tsx` — Ícone grande + título italic bold + descrição + botão de ação opcional. Para listas vazias.
+- [x] `LoadingSpinner.tsx` — Spinner brutalista (quadrado rotacionando com `border-4 border-black`).
+- [x] `ErrorState.tsx` — Card vermelho com ícone + mensagem + botão "Tentar novamente".
+- [x] `PageTitle.tsx` — `<h1 className="text-4xl font-black italic text-black">`. Subtítulo opcional em `text-lg text-gray-600`.
+- [x] `ConfirmDialog.tsx` — Modal com mensagem + botões "Confirmar" (danger) e "Cancelar" (outline). Para ações destrutivas (UX-004).
+- [x] Verificar: `npm run build` compila sem erros (TS strict).
+- [x] Validação visual: screenshot da página raiz com o tema brutalista (`.todo/screenshots/t14-2-home.png`) + DOM check.
 
 ---
 

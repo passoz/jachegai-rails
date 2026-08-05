@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brutal-white: #ffffff;
+  --color-brutal-red: #ff6b6b;
+  --color-brutal-black: #000000;
+  --color-brutal-gray: #f5f5f5;
+  --radius-brutal: 1.5rem;
+  --shadow-brutal: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-brutal-white text-brutal-black;
+  }
+}
