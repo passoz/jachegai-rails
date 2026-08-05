@@ -1343,25 +1343,25 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `GET /api/v1/customer/orders/{id}/cancel` (POST), `GET /api/v1/customer/orders/{id}/tracking`, `GET|POST /api/v1/customer/tickets`, `GET /api/v1/customer/tickets/{id}`, `POST /api/v1/customer/tickets/{id}/messages`.
 
-- [ ] `customer/OrdersPage.tsx`:
+- [x] `customer/OrdersPage.tsx`:
   - Lista paginada de pedidos do customer. Buscar de onde? A API não tem `GET /api/v1/customer/orders` explícito — verificar se existe. Se não: página estática "Ver tracking de pedido por ID".
   - Cada card: order ID (truncado), status (Badge), data, total, seller. Click → `/customer/orders/:id`.
-- [ ] `customer/OrderDetailPage.tsx`:
+- [x] `customer/OrderDetailPage.tsx`:
   - Card com: status atual (Badge grande), data de criação, seller.
   - Lista de itens: nome, quantidade, preço unitário, subtotal.
   - Totais: subtotal, delivery_fee, discount, courier_fee, total.
   - Histórico de status: timeline vertical com estado + data + ator. Estado em `font-bold`, data em `text-sm text-gray-500`.
   - Se status é `pending`: botão "Cancelar pedido" (ConfirmDialog → `POST .../cancel`).
-- [ ] `customer/TrackingPage.tsx`:
+- [x] `customer/TrackingPage.tsx`:
   - Consome `GET /api/v1/customer/orders/{id}/tracking`.
   - Card com: estado atual do pedido, histórico de transições.
   - Se courier atribuído e localização disponível: exibir coordenadas (lat, lng) e timestamp de última atualização. Sem mapa (deferred) — exibir dados textuais: "Courier próximo — última posição: X, Y às HH:MM".
   - Mensagem de freshness: "Atualizado há X minutos" (UX: não implicar real-time se periódico).
-- [ ] `customer/TicketsPage.tsx`:
+- [x] `customer/TicketsPage.tsx`:
   - Lista de tickets do customer (`GET /api/v1/customer/tickets`).
   - Cada card: subject, status (Badge), data de criação. Click → `/customer/tickets/:id`.
   - Botão "Novo ticket" → abre Modal com campos: subject, message, order_id (opcional, dropdown com pedidos do customer). `POST /api/v1/customer/tickets`.
-- [ ] `customer/TicketDetailPage.tsx`:
+- [x] `customer/TicketDetailPage.tsx`:
   - Título do ticket, status (Badge), data.
   - Lista de mensagens em timeline (chat-like): mensagem do customer (alinhada à direita, bg-white), mensagem do admin (alinhada à esquerda, bg-brutal-gray). Cada uma com sender, timestamp, body.
   - Campo de nova mensagem + botão "Enviar" (`POST .../messages`). Interativo: limpa campo após envio, adiciona mensagem à lista.

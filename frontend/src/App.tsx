@@ -19,6 +19,10 @@ import AddressesPage from './pages/customer/AddressesPage'
 import FavoritesPage from './pages/customer/FavoritesPage'
 import CartPage from './pages/customer/CartPage'
 import CheckoutPage from './pages/customer/CheckoutPage'
+import OrdersPage from './pages/customer/OrdersPage'
+import TrackingPage from './pages/customer/TrackingPage'
+import TicketsPage from './pages/customer/TicketsPage'
+import TicketDetailPage from './pages/customer/TicketDetailPage'
 
 function App() {
   return (
@@ -48,12 +52,15 @@ function App() {
           {/* Customer */}
           <Route element={<ProtectedRoute roles={['customer']} />}>
             <Route element={<CustomerLayout />}>
-              <Route path="/customer/orders" element={<PlaceholderPage title="Meus pedidos" description="Lista de pedidos — em construção" />} />
+              <Route path="/customer/orders" element={<OrdersPage />} />
+              <Route path="/customer/orders/:id" element={<TrackingPage />} />
+              <Route path="/customer/tracking/:id" element={<TrackingPage />} />
               <Route path="/customer/cart" element={<CartPage />} />
               <Route path="/customer/checkout" element={<CheckoutPage />} />
               <Route path="/customer/addresses" element={<AddressesPage />} />
               <Route path="/customer/favorites" element={<FavoritesPage />} />
-              <Route path="/customer/tickets" element={<PlaceholderPage title="Suporte" description="Tickets — em construção" />} />
+              <Route path="/customer/tickets" element={<TicketsPage />} />
+              <Route path="/customer/tickets/:id" element={<TicketDetailPage />} />
               <Route path="/customer/profile" element={<ProfilePage />} />
             </Route>
           </Route>
