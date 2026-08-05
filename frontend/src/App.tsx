@@ -40,6 +40,10 @@ import CourierStatsPage from './pages/courier/StatsPage'
 import AdminDashboardPage from './pages/admin/DashboardPage'
 import AdminUsersPage from './pages/admin/UsersPage'
 import AdminUserDetailPage from './pages/admin/UserDetailPage'
+import AdminSellersPage from './pages/admin/SellersPage'
+import AdminSellerDetailPage from './pages/admin/SellerDetailPage'
+import AdminCouriersPage from './pages/admin/CouriersPage'
+import AdminCourierDetailPage from './pages/admin/CourierDetailPage'
 
 function App() {
   return (
@@ -114,8 +118,10 @@ function App() {
               <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
               <Route path="/admin/users" element={<AdminUsersPage />} />
               <Route path="/admin/users/:id" element={<AdminUserDetailPage />} />
-              <Route path="/admin/sellers" element={<PlaceholderPage title="Sellers" description="Moderação — em construção" />} />
-              <Route path="/admin/couriers" element={<PlaceholderPage title="Couriers" description="Moderação — em construção" />} />
+              <Route path="/admin/sellers" element={<AdminSellersPage />} />
+              <Route path="/admin/sellers/:id" element={<AdminSellerDetailPage />} />
+              <Route path="/admin/couriers" element={<AdminCouriersPage />} />
+              <Route path="/admin/couriers/:id" element={<AdminCourierDetailPage />} />
               <Route path="/admin/orders" element={<PlaceholderPage title="Pedidos" description="Oversight — em construção" />} />
               <Route path="/admin/payments" element={<PlaceholderPage title="Pagamentos" description="Pagamentos — em construção" />} />
               <Route path="/admin/tickets" element={<PlaceholderPage title="Tickets" description="Suporte — em construção" />} />

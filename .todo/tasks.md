@@ -1499,10 +1499,10 @@ Todos os componentes em `frontend/src/components/ui/`.
 
 **Endpoints:** `GET /api/v1/admin/sellers`, `GET /api/v1/admin/sellers/{id}`, `POST .../approve|reject|suspend|reinstate`. Idem para couriers.
 
-- [ ] `admin/SellersPage.tsx`:
+- [x] `admin/SellersPage.tsx`:
   - Tabela: business_name, document, moderation_state (Badge), data. Click → detalhe.
   - Filtros por status: tabs "Pendentes", "Aprovados", "Suspensos", "Rejeitados", "Todos".
-- [ ] `admin/SellerDetailPage.tsx`:
+- [x] `admin/SellerDetailPage.tsx`:
   - Card com todos os dados do seller.
   - Botões de moderação conforme estado (state machine):
     - `pending_review` → "Aprovar" (primary) + "Rejeitar" (danger, com ConfirmDialog + campo `reason`).
@@ -1510,8 +1510,8 @@ Todos os componentes em `frontend/src/components/ui/`.
     - `suspended` → "Reativar" (primary).
   - Cada ação: `POST /api/v1/admin/sellers/{id}/{action}` com `{reason}` quando aplicável.
   - Feedback: reload com novo status.
-- [ ] `admin/CouriersPage.tsx` — mesma estrutura que SellersPage, com endpoints de courier.
-- [ ] `admin/CourierDetailPage.tsx` — mesma estrutura que SellerDetailPage:
+- [x] `admin/CouriersPage.tsx` — mesma estrutura que SellersPage, com endpoints de courier.
+- [x] `admin/CourierDetailPage.tsx` — mesma estrutura que SellerDetailPage:
   - Exibe: nome, documento, veículo, approval_state, operational_state.
   - Botões: approve/reject/suspend/reinstate conforme state machine.
 
